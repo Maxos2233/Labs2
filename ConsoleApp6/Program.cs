@@ -11,24 +11,35 @@ namespace ConsoleApp6
     {
         static void Main(string[] args)
         {
-            List<int> n = new List<int>() { 1, 13, 8, 11, -23, -66 };
-            List<int> m = new List<int>() { 1, 5, 4, 13, -66, -23 };
+            List<int> n = new List<int>() { 2, 5, 4, 13, 24, -27 };
+            List<int> m = new List<int>() { 23, 5, 4, 13, -66, -23 };
             List<int> s = new List<int>();
+            var counter = 0;
             for (int i = 0; i < n.Count; i++)
             {
                 var number = n[i];
                 foreach (int j in m)
                 {
                     var number2 = j;
-                    if (number == number2)
+                    if (number != number2)
                     {
-                        s.Add(number);
+                        counter++;
                         continue;
                     }
-                    else
-                        
-                        continue;
                 }
+                if (counter == m.Count)
+                {
+                    s.Add(number);
+                    counter = 0;
+                }
+                else
+                {
+                    counter = 0;
+                    continue;
+                }
+                    
+
+                
             }
             Console.WriteLine(string.Join(" ", s));
             Console.ReadKey();
