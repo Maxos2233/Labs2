@@ -11,8 +11,8 @@ namespace ConsoleApp6
     {
         static void Main(string[] args)
         {
-            List<int> n = new List<int>() { 2, 5, 4, 13, 24, -27 };
-            List<int> m = new List<int>() { 23, 5, 4, 13, -66, -23 };
+            List<int> n = new List<int>() { 1, 2, 3, 13};
+            List<int> m = new List<int>() { 3, 2, 0};
             List<int> s = new List<int>();
             var counter = 0;
             for (int i = 0; i < n.Count; i++)
