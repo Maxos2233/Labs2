@@ -11,9 +11,10 @@ namespace ConsoleApp6
     {
         static void Main(string[] args)
         {
-            List<int> n = new List<int>() { 2, 5, 4, 13, 24, -27 };
-            List<int> m = new List<int>() { 23, 5, 4, 13, -66, -23 };
+            List<int> n = new List<int>() { 2, 1, -3, 5};
+            List<int> m = new List<int>() { -1, -6, 2, 5};
             List<int> s = new List<int>();
+            List<int> l = new List<int>();
             var counter = 0;
             for (int i = 0; i < n.Count; i++)
             {
@@ -41,7 +42,65 @@ namespace ConsoleApp6
 
                 
             }
+
+            counter = 0;
+            if (n.Count >= m.Count)
+            {
+                for (int i = 0; i < n.Count; i++)
+                {
+                    var number = n[i];
+                    var itog = 0;
+                    if (counter < m.Count)
+                    {
+                        for (int j  = 0; j < m.Count;)
+                        {
+                            var number2 = 0;
+                            j = counter;
+                            number2 = m[j];
+                            itog = number - number2;
+                            l.Add(itog);
+                            break;
+                        }
+                    }
+
+                    else
+                    {
+                        l.Add(number);
+                    }
+                    counter++;
+                }
+                
+            }
+            else
+            {
+                for (int i = 0; i < m.Count; i++)
+                {
+                    var number2 = m[i];
+                    var itog = 0;
+                    if (counter < n.Count)
+                    {
+                        for (int j = 0; j < n.Count;)
+                        {
+                            var number = 0;
+                            j = counter;
+                            number = n[j];
+                            itog = number - number2;
+                            l.Add(itog);
+                            break;
+                        }
+                    }
+
+                    else
+                    {
+                        l.Add(number2);
+                    }
+                    counter++;
+                }
+            }
+            
+
             Console.WriteLine(string.Join(" ", s));
+            Console.WriteLine(string.Join(' ', l));
             Console.ReadKey();
         }
     }
